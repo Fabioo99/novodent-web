@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { MessageCircle, FileText, ChevronRight } from 'lucide-react';
 
 interface Product {
@@ -117,23 +118,36 @@ const Brands = () => {
           </p>
         </div>
 
-        {/* Brands Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-12">
-          {allBrands.map((brand) => (
-            <button
-              key={brand}
-              onClick={() => setSelectedBrand(selectedBrand === brand ? null : brand)}
-              className={`p-4 rounded-lg border-2 transition-all duration-300 text-center hover:shadow-card ${
-                selectedBrand === brand
-                  ? 'border-primary bg-primary/5 shadow-card'
-                  : 'border-border bg-card hover:border-primary/50'
-              }`}
-            >
-              <span className="text-sm font-medium text-foreground">
-                {brand}
-              </span>
-            </button>
-          ))}
+        {/* Brands Carousel */}
+        <div className="mb-12">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {allBrands.map((brand) => (
+                <CarouselItem key={brand} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
+                  <button
+                    onClick={() => setSelectedBrand(selectedBrand === brand ? null : brand)}
+                    className={`w-full p-4 rounded-lg border-2 transition-all duration-300 text-center hover:shadow-card ${
+                      selectedBrand === brand
+                        ? 'border-primary bg-primary/5 shadow-card'
+                        : 'border-border bg-card hover:border-primary/50'
+                    }`}
+                  >
+                    <span className="text-sm font-medium text-foreground">
+                      {brand}
+                    </span>
+                  </button>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
 
         {/* Selected Brand Products */}

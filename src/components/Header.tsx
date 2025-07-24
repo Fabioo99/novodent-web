@@ -50,19 +50,23 @@ const Header = () => {
               
               {isBrandsOpen && (
                 <div 
-                  className="absolute top-full left-0 mt-2 w-80 bg-card shadow-elegant rounded-lg border border-border p-4 grid grid-cols-2 gap-2"
+                  className="absolute top-full left-0 mt-2 w-80 bg-card shadow-elegant rounded-lg border border-border"
                   onMouseEnter={() => setIsBrandsOpen(true)}
                   onMouseLeave={() => setIsBrandsOpen(false)}
                 >
-                  {brands.map((brand) => (
-                    <a
-                      key={brand}
-                      href={`#marca-${brand.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors p-2 rounded hover:bg-accent"
-                    >
-                      {brand}
-                    </a>
-                  ))}
+                  <div className="max-h-64 overflow-y-auto p-4">
+                    <div className="space-y-1">
+                      {brands.map((brand) => (
+                        <a
+                          key={brand}
+                          href={`#marca-${brand.toLowerCase().replace(/\s+/g, '-')}`}
+                          className="block text-sm text-muted-foreground hover:text-primary transition-colors p-2 rounded hover:bg-accent"
+                        >
+                          {brand}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               )}
             </div>

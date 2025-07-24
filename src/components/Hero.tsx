@@ -11,10 +11,6 @@ const Hero = () => {
     window.open('#', '_blank'); // Replace with actual Google Drive link
   };
 
-  const brands = [
-    'SAEVO BY GNATUS', 'AJAX', 'DEOCA', 'SPD', 'BIOART', 'ORTHOMETRIC',
-    'VOCO', 'SHOFU', 'ANYCUBIC', 'PRIZMA', 'PANDA', 'WOSON'
-  ];
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center">
@@ -28,9 +24,8 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Text Content */}
-          <div className="text-white space-y-8">
+        <div className="flex flex-col items-center text-center">
+          <div className="text-white space-y-8 max-w-4xl">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
                 Tu aliado en{' '}
@@ -73,36 +68,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column - Features */}
-          <div className="lg:pl-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <h3 className="text-white text-2xl font-bold mb-6">
-                Marcas de Confianza
-              </h3>
-              
-              <div className="grid grid-cols-2 gap-4">
-                {brands.slice(0, 8).map((brand, index) => (
-                  <div 
-                    key={brand}
-                    className="bg-white/10 rounded-lg p-3 text-center border border-white/20 hover:bg-white/20 transition-all duration-300"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <span className="text-white text-sm font-medium">
-                      {brand}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              
-              <Button
-                variant="link"
-                className="mt-4 text-white hover:text-secondary p-0"
-                onClick={() => document.getElementById('marcas')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Ver todas las marcas →
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
 
