@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, FileText, Menu, X, ChevronDown } from 'lucide-react';
 
 const Header = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBrandsOpen, setIsBrandsOpen] = useState(false);
 
@@ -26,9 +28,12 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="text-2xl font-bold text-primary">
+            <button 
+              onClick={() => navigate('/')}
+              className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors"
+            >
               NOVODENT
-            </div>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
@@ -57,13 +62,13 @@ const Header = () => {
                   <div className="max-h-64 overflow-y-auto p-4">
                     <div className="space-y-1">
                       {brands.map((brand) => (
-                        <a
+                        <button
                           key={brand}
-                          href={`#marca-${brand.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="block text-sm text-muted-foreground hover:text-primary transition-colors p-2 rounded hover:bg-accent"
+                          onClick={() => navigate(`/marca/${encodeURIComponent(brand)}`)}
+                          className="block w-full text-left text-sm text-muted-foreground hover:text-primary transition-colors p-2 rounded hover:bg-accent"
                         >
                           {brand}
-                        </a>
+                        </button>
                       ))}
                     </div>
                   </div>
