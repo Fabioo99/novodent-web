@@ -1,0 +1,262 @@
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { MessageCircle, Phone, Mail, MapPin, Clock, Send, Instagram } from 'lucide-react';
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Create WhatsApp message
+    const message = `Hola, soy ${formData.name}.\n\n` +
+      `Email: ${formData.email}\n` +
+      `Teléfono: ${formData.phone}\n\n` +
+      `Mensaje: ${formData.message}`;
+    
+    window.open(`https://wa.me/584124555310?text=${encodeURIComponent(message)}`, '_blank');
+    
+    // Reset form
+    setFormData({ name: '', email: '', phone: '', message: '' });
+  };
+
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/584124555310', '_blank');
+  };
+
+  const handlePhone = () => {
+    window.open('tel:+584124555310');
+  };
+
+  const handleEmail = () => {
+    window.open('mailto:novodent.vzla@gmail.com');
+  };
+
+  const handleInstagram = () => {
+    window.open('https://instagram.com/novodentca', '_blank');
+  };
+
+  return (
+    <section id="contacto" className="py-20 bg-accent/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Ponte en <span className="text-primary">Contacto</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Estamos aquí para ayudarte a encontrar las mejores soluciones odontológicas para tu práctica
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* Contact Information */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-2xl font-bold text-foreground mb-8">
+                Información de Contacto
+              </h3>
+
+              <div className="space-y-6">
+                {/* Phone */}
+                <div className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:shadow-card transition-all duration-300 cursor-pointer" onClick={handlePhone}>
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                    <Phone className="h-6 w-6 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">Teléfono</div>
+                    <div className="text-muted-foreground">+58 412 4555310</div>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:shadow-card transition-all duration-300 cursor-pointer" onClick={handleEmail}>
+                  <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center">
+                    <Mail className="h-6 w-6 text-secondary-foreground" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">Email</div>
+                    <div className="text-muted-foreground">novodent.vzla@gmail.com</div>
+                  </div>
+                </div>
+
+                {/* Location */}
+                <div className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border">
+                  <div className="w-12 h-12 bg-success rounded-xl flex items-center justify-center">
+                    <MapPin className="h-6 w-6 text-success-foreground" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">Ubicación</div>
+                    <div className="text-muted-foreground">Valencia, Edo. Carabobo</div>
+                  </div>
+                </div>
+
+                {/* Instagram */}
+                <div className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:shadow-card transition-all duration-300 cursor-pointer" onClick={handleInstagram}>
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                    <Instagram className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">Instagram</div>
+                    <div className="text-muted-foreground">@novodentca</div>
+                  </div>
+                </div>
+
+                {/* Business Hours */}
+                <div className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border">
+                  <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center">
+                    <Clock className="h-6 w-6 text-muted-foreground" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">Horario de Atención</div>
+                    <div className="text-muted-foreground">Lun - Vie: 8:00 AM - 6:00 PM</div>
+                    <div className="text-muted-foreground">Sáb: 8:00 AM - 2:00 PM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* WhatsApp CTA */}
+            <div className="bg-gradient-primary rounded-2xl p-8 text-center shadow-elegant">
+              <h4 className="text-xl font-bold text-primary-foreground mb-4">
+                ¿Necesitas Atención Inmediata?
+              </h4>
+              <p className="text-primary-foreground/90 mb-6">
+                Contáctanos directamente por WhatsApp para una respuesta rápida
+              </p>
+              <Button
+                variant="whatsapp"
+                size="lg"
+                onClick={handleWhatsApp}
+                className="bg-success hover:bg-success/90"
+              >
+                <MessageCircle className="h-5 w-5" />
+                Abrir WhatsApp
+              </Button>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="bg-card rounded-2xl p-8 shadow-elegant border border-border">
+            <h3 className="text-2xl font-bold text-foreground mb-8">
+              Envíanos un Mensaje
+            </h3>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                  Nombre Completo *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                  placeholder="Tu nombre completo"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                  placeholder="tu@email.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                  Teléfono
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                  placeholder="+58 412 123 4567"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  Mensaje *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors resize-none"
+                  placeholder="Cuéntanos sobre tus necesidades odontológicas..."
+                ></textarea>
+              </div>
+
+              <Button
+                type="submit"
+                variant="hero"
+                size="lg"
+                className="w-full flex items-center gap-3"
+              >
+                <Send className="h-5 w-5" />
+                Enviar Mensaje por WhatsApp
+              </Button>
+            </form>
+
+            <p className="text-sm text-muted-foreground mt-4 text-center">
+              Al enviar este formulario, serás redirigido a WhatsApp con tu mensaje pre-cargado
+            </p>
+          </div>
+        </div>
+
+        {/* Map Section */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
+            Nuestra Ubicación
+          </h3>
+          <div className="bg-card rounded-2xl overflow-hidden shadow-elegant border border-border">
+            <div className="h-96 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+              <div className="text-center">
+                <MapPin className="h-16 w-16 text-primary mx-auto mb-4" />
+                <h4 className="text-xl font-bold text-foreground mb-2">
+                  Valencia, Estado Carabobo
+                </h4>
+                <p className="text-muted-foreground">
+                  Contáctanos para coordinar una visita a nuestras instalaciones
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
