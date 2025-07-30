@@ -8,7 +8,7 @@ const Hero = () => {
   };
 
   const handleCatalog = () => {
-    window.open('#', '_blank'); // Replace with actual Google Drive link
+    window.open('https://drive.google.com/drive/folders/1HqjJS3cbcbofBF-vUHzr7htd1kvqFWzH?usp=drive_link', '_blank');
   };
 
 

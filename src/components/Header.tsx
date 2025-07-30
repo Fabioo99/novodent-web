@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   const handleCatalog = () => {
-    window.open('#', '_blank'); // Replace with actual Google Drive link
+    window.open('https://drive.google.com/drive/folders/1HqjJS3cbcbofBF-vUHzr7htd1kvqFWzH?usp=drive_link', '_blank');
   };
 
   return (
@@ -30,9 +30,13 @@ const Header = () => {
           <div className="flex-shrink-0">
             <button 
               onClick={() => navigate('/')}
-              className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors"
+              className="flex items-center hover:opacity-80 transition-opacity"
             >
-              NOVODENT
+              <img 
+                src="/logo-novodent.png" 
+                alt="Novodent Logo" 
+                className="h-10 w-auto"
+              />
             </button>
           </div>
 

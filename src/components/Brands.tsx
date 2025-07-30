@@ -56,7 +56,7 @@ const Brands = () => {
   };
 
   const handleBrandCatalog = (brand: string) => {
-    window.open('#', '_blank'); // Replace with actual brand catalog link
+    window.open('https://drive.google.com/drive/folders/1HqjJS3cbcbofBF-vUHzr7htd1kvqFWzH?usp=drive_link', '_blank');
   };
 
   const brands: Brand[] = [
@@ -136,6 +136,51 @@ const Brands = () => {
     'DTE', 'JINME', 'DENTALFILM', 'PREVEST', 'MDT', 'TPC', 'DMP', 'Aalbadent'
   ];
 
+  // Brand logos mapping
+  const brandLogos: { [key: string]: string } = {
+    'PANDA': '/brands/panda-logo.jpeg',
+    'DENTALFILM': '/brands/dentafilm-logo.jpg',
+    'DTE': '/brands/dte-logo.png',
+    'PRIZMA': '/brands/prizma-logo.png',
+    'ANYCUBIC': '/brands/anycubic-logo.jpeg',
+    'SHOFU': '/brands/shofu-logo.png',
+    'SAEVO BY GNATUS': '/brands/saevo-logo.png',
+    'AJAX': '/brands/ajax-logo.png',
+    'DEOCA': '/brands/deoca-logo.png',
+    'SPD': '/brands/spd-logo.png',
+    'BIOART': '/brands/bioart-logo.png',
+    'ORTHOMETRIC': '/brands/orthometric-logo.png',
+    'VOCO': '/brands/voco-logo.png',
+    'DMP': '/brands/dmp-logo.png',
+    'Aalbadent': '/brands/aalbadent-logo.png',
+    'WOSON': '/brands/woson-logo.png',
+    'JINME': '/brands/jinme-logo.png',
+    'TPC': '/brands/tpc-logo.png',
+    // All brand logos are now available!
+  };
+
+  // Function to get brand logo or fallback to initials
+  const getBrandDisplay = (brand: string) => {
+    const logoPath = brandLogos[brand];
+    if (logoPath) {
+      return (
+        <img 
+          src={logoPath} 
+          alt={`${brand} logo`} 
+          className="w-12 h-12 object-contain"
+          onError={(e) => {
+            // Fallback to initials if image fails to load
+            const target = e.target as HTMLImageElement;
+            target.style.display = 'none';
+            const fallback = target.nextElementSibling as HTMLElement;
+            if (fallback) fallback.style.display = 'flex';
+          }}
+        />
+      );
+    }
+    return null;
+  };
+
   return (
     <section id="marcas" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -171,8 +216,15 @@ const Brands = () => {
                     }`}
                   >
                     <div className="flex flex-col items-center gap-3">
-                      <div className="w-16 h-16 bg-gradient-primary rounded-lg flex items-center justify-center">
-                        <span className="text-white font-bold text-xs text-center">
+                      <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center border border-border/20 shadow-sm">
+                        {getBrandDisplay(brand)}
+                        {/* Fallback to initials if no logo */}
+                        <span 
+                          className={`text-primary font-bold text-xs text-center ${
+                            brandLogos[brand] ? 'hidden' : 'flex'
+                          }`}
+                          style={{ display: brandLogos[brand] ? 'none' : 'flex' }}
+                        >
                           {brand.split(' ').map(word => word[0]).join('').slice(0, 3)}
                         </span>
                       </div>

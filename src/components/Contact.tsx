@@ -241,15 +241,31 @@ const Contact = () => {
             Nuestra Ubicación
           </h3>
           <div className="bg-card rounded-2xl overflow-hidden shadow-elegant border border-border">
-            <div className="h-96 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-16 w-16 text-primary mx-auto mb-4" />
-                <h4 className="text-xl font-bold text-foreground mb-2">
-                  Valencia, Estado Carabobo
-                </h4>
-                <p className="text-muted-foreground">
-                  Contáctanos para coordinar una visita a nuestras instalaciones
-                </p>
+            <div className="relative w-full h-96 md:h-[450px]">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.889076848184!2d-68.00796922461804!3d10.189662689925695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e806700002d045b%3A0x3dec254129fd074d!2sNovodent%2C%20C.A.!5e0!3m2!1ses!2sus!4v1753850210634!5m2!1ses!2sus"
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ubicación de Novodent C.A. en Valencia, Carabobo, Venezuela"
+                className="w-full h-full"
+              />
+            </div>
+            {/* Location info below map */}
+            <div className="p-6 bg-card">
+              <div className="flex items-center justify-center gap-3 text-center">
+                <MapPin className="h-6 w-6 text-primary flex-shrink-0" />
+                <div>
+                  <h4 className="text-lg font-semibold text-foreground mb-1">
+                    Novodent, C.A.
+                  </h4>
+                  <p className="text-muted-foreground text-sm">
+                    Valencia 2001, Carabobo, Venezuela
+                  </p>
+                </div>
               </div>
             </div>
           </div>

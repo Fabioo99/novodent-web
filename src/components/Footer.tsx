@@ -38,8 +38,12 @@ const Footer = () => {
         <div className="grid lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="text-3xl font-bold text-primary mb-6">
-              NOVODENT
+            <div className="mb-6">
+              <img 
+                src="/logo-novodent.png" 
+                alt="Novodent Logo" 
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-background/80 leading-relaxed mb-6">
               Tu aliado confiable en soluciones odontológicas con más de 45 años de experiencia. 
