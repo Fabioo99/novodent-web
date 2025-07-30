@@ -295,9 +295,16 @@ const BrandPage = () => {
                     onClick={() => navigate(`/marca/${encodeURIComponent(brand)}`)}
                     className="w-full p-4 rounded-lg border-2 border-border bg-card hover:border-primary/50 hover:shadow-card transition-all duration-300 text-center group"
                   >
-                    <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                      {brand}
-                    </span>
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <span className="text-sm font-bold text-primary">
+                          {brand.split(' ').map(word => word[0]).join('').slice(0, 2)}
+                        </span>
+                      </div>
+                      <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                        {brand}
+                      </span>
+                    </div>
                   </button>
                 </CarouselItem>
               ))}
