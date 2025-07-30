@@ -138,9 +138,16 @@ const Brands = () => {
                         : 'border-border bg-card hover:border-primary/50'
                     }`}
                   >
-                    <span className="text-sm font-medium text-foreground">
-                      {brand}
-                    </span>
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="w-16 h-16 bg-gradient-primary rounded-lg flex items-center justify-center">
+                        <span className="text-white font-bold text-xs text-center">
+                          {brand.split(' ').map(word => word[0]).join('').slice(0, 3)}
+                        </span>
+                      </div>
+                      <span className="text-xs font-medium text-foreground leading-tight">
+                        {brand}
+                      </span>
+                    </div>
                   </button>
                 </CarouselItem>
               ))}
