@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { MessageCircle, FileText, ChevronRight } from 'lucide-react';
@@ -16,6 +16,37 @@ interface Brand {
 
 const Brands = () => {
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+  const [api, setApi] = useState<any>();
+
+  useEffect(() => {
+    if (!api) return;
+
+    const autoPlay = setInterval(() => {
+      if (api.canScrollNext()) {
+        api.scrollNext();
+      } else {
+        api.scrollTo(0);
+      }
+    }, 3000);
+
+    const onPointerDown = () => {
+      clearInterval(autoPlay);
+      setTimeout(() => {
+        if (api.canScrollNext()) {
+          api.scrollNext();
+        } else {
+          api.scrollTo(0);
+        }
+      }, 5000);
+    };
+
+    api.on('pointerDown', onPointerDown);
+
+    return () => {
+      clearInterval(autoPlay);
+      api.off('pointerDown', onPointerDown);
+    };
+  }, [api]);
 
   const handleWhatsApp = (product?: string) => {
     const message = product 
@@ -121,6 +152,7 @@ const Brands = () => {
         {/* Brands Carousel */}
         <div className="mb-12">
           <Carousel
+            setApi={setApi}
             opts={{
               align: "start",
               loop: true,
