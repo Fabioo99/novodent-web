@@ -76,9 +76,6 @@ const Header = () => {
               )}
             </div>
 
-            <a href="#equipos" className="text-foreground hover:text-primary transition-colors">
-              Equipos
-            </a>
             <a href="#nosotros" className="text-foreground hover:text-primary transition-colors">
               Sobre Nosotros
             </a>
@@ -130,9 +127,6 @@ const Header = () => {
               </a>
               <a href="#marcas" className="text-foreground hover:text-primary transition-colors">
                 Marcas
-              </a>
-              <a href="#equipos" className="text-foreground hover:text-primary transition-colors">
-                Equipos
               </a>
               <a href="#nosotros" className="text-foreground hover:text-primary transition-colors">
                 Sobre Nosotros
