@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { MessageCircle, FileText, ChevronRight } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 interface Product {
   name: string;
@@ -15,7 +16,7 @@ interface Brand {
 }
 
 const Brands = () => {
-  const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+  const navigate = useNavigate();
   const [api, setApi] = useState<any>();
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const Brands = () => {
       } else {
         api.scrollTo(0);
       }
-    }, 3000);
+    }, 5000);
 
     const onPointerDown = () => {
       clearInterval(autoPlay);
@@ -37,7 +38,7 @@ const Brands = () => {
         } else {
           api.scrollTo(0);
         }
-      }, 5000);
+      }, 7000);
     };
 
     api.on('pointerDown', onPointerDown);
@@ -57,6 +58,12 @@ const Brands = () => {
 
   const handleBrandCatalog = (brand: string) => {
     window.open('https://drive.google.com/drive/folders/1HqjJS3cbcbofBF-vUHzr7htd1kvqFWzH?usp=drive_link', '_blank');
+  };
+
+  const handleBrandClick = (brand: string) => {
+    navigate(`/marca/${encodeURIComponent(brand)}`);
+    // Scroll to top when navigating to brand page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const brands: Brand[] = [
@@ -208,12 +215,8 @@ const Brands = () => {
               {allBrands.map((brand) => (
                 <CarouselItem key={brand} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
                   <button
-                    onClick={() => setSelectedBrand(selectedBrand === brand ? null : brand)}
-                    className={`w-full p-4 rounded-lg border-2 transition-all duration-300 text-center hover:shadow-card ${
-                      selectedBrand === brand
-                        ? 'border-primary bg-primary/5 shadow-card'
-                        : 'border-border bg-card hover:border-primary/50'
-                    }`}
+                    onClick={() => handleBrandClick(brand)}
+                    className="w-full p-4 rounded-lg border-2 transition-all duration-300 text-center hover:shadow-card border-border bg-card hover:border-primary/50 hover:bg-primary/5"
                   >
                     <div className="flex flex-col items-center gap-3">
                       <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center border border-border/20 shadow-sm">
@@ -241,110 +244,21 @@ const Brands = () => {
           </Carousel>
         </div>
 
-        {/* Selected Brand Products */}
-        {selectedBrand && (
-          <div className="bg-card rounded-2xl p-8 shadow-elegant border border-border animate-fade-in">
-            <div className="flex justify-between items-center mb-8">
-              <h3 className="text-2xl font-bold text-foreground">
-                Productos {selectedBrand}
-              </h3>
-              <Button
-                variant="outline"
-                onClick={() => handleBrandCatalog(selectedBrand)}
-                className="flex items-center gap-2"
-              >
-                <FileText className="h-4 w-4" />
-                Ver Catálogo
-              </Button>
-            </div>
-
-            {brands.find(b => b.name === selectedBrand)?.products ? (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {brands.find(b => b.name === selectedBrand)?.products.map((product, index) => (
-                  <div
-                    key={product.name}
-                    className="bg-background rounded-xl p-6 border border-border hover:shadow-card transition-all duration-300"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className="h-32 bg-gradient-primary rounded-lg mb-4 flex items-center justify-center">
-                      <span className="text-primary-foreground font-semibold text-center px-4">
-                        {product.name}
-                      </span>
-                    </div>
-                    
-                    <h4 className="font-semibold text-foreground mb-2">
-                      {product.name}
-                    </h4>
-                    
-                    <p className="text-muted-foreground text-sm mb-4">
-                      {product.description}
-                    </p>
-
-                    <div className="flex gap-2">
-                      <Button
-                        variant="whatsapp"
-                        size="sm"
-                        onClick={() => handleWhatsApp(product.name)}
-                        className="flex-1"
-                      >
-                        <MessageCircle className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => handleBrandCatalog(selectedBrand)}
-                      >
-                        <ChevronRight className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-12">
-                <p className="text-muted-foreground text-lg mb-6">
-                  Catálogo completo disponible para {selectedBrand}
-                </p>
-                <div className="flex justify-center gap-4">
-                  <Button
-                    variant="whatsapp"
-                    onClick={() => handleWhatsApp()}
-                    className="flex items-center gap-2"
-                  >
-                    <MessageCircle className="h-4 w-4" />
-                    Consultar por WhatsApp
-                  </Button>
-                  <Button
-                    variant="catalog"
-                    onClick={() => handleBrandCatalog(selectedBrand)}
-                    className="flex items-center gap-2"
-                  >
-                    <FileText className="h-4 w-4" />
-                    Ver Catálogo Completo
-                  </Button>
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-
         {/* Call to Action */}
-        {!selectedBrand && (
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-6">
-              ¿No encuentras la marca que buscas?
-            </p>
-            <Button
-              variant="hero"
-              size="lg"
-              onClick={() => handleWhatsApp()}
-              className="flex items-center gap-3 mx-auto"
-            >
-              <MessageCircle className="h-5 w-5" />
-              Consulta Nuestro Catálogo Completo
-            </Button>
-          </div>
-        )}
+        <div className="text-center mt-12">
+          <p className="text-muted-foreground mb-6">
+            ¿No encuentras la marca que buscas?
+          </p>
+          <Button
+            variant="hero"
+            size="lg"
+            onClick={() => handleWhatsApp()}
+            className="flex items-center gap-3 mx-auto"
+          >
+            <MessageCircle className="h-5 w-5" />
+            Consulta Nuestro Catálogo Completo
+          </Button>
+        </div>
       </div>
     </section>
   );
