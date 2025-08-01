@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { MessageCircle, FileText, ArrowLeft, ChevronRight } from 'lucide-react';
@@ -33,13 +33,24 @@ const BrandPage = () => {
   };
 
   const handleBrandCatalog = () => {
-    window.open('https://drive.google.com/drive/folders/1HqjJS3cbcbofBF-vUHzr7htd1kvqFWzH?usp=drive_link', '_blank');
+    window.open('https://drive.google.com/drive/folders/1rmiHiEIzd_E7S9rUtD8seuzgM8LGawUz?usp=sharing', '_blank');
   };
+
+  // Redirect MDT and PREVEST to catalog automatically
+  useEffect(() => {
+    if (brandName === 'MDT' || brandName === 'PREVEST') {
+      handleBrandCatalog();
+      // Optionally navigate back to home or show a message
+      setTimeout(() => {
+        navigate('/');
+      }, 1000);
+    }
+  }, [brandName, navigate]);
 
   const allBrands = [
     'SAEVO BY GNATUS', 'AJAX', 'DEOCA', 'SPD', 'BIOART', 'ORTHOMETRIC',
     'VOCO', 'SHOFU', 'ANYCUBIC', 'PRIZMA', 'PANDA', 'WOSON',
-    'DTE', 'JINME', 'DENTALFILM', 'TPC', 'DMP', 'Aalbadent'
+    'DTE', 'JINME', 'DENTALFILM', 'PREVEST', 'MDT', 'TPC', 'DMP', 'AALBADENT'
   ];
 
   const brandData: Record<string, BrandInfo> = {
@@ -56,7 +67,7 @@ const BrandPage = () => {
           image: '/brands/anycubic/resina-gris.png'
         },
         { 
-          name: 'Estación de Limpieza Automática', 
+          name: 'Wash&cure max', 
           description: 'Estación de limpieza automática Anycubic: diseñada para lavar modelos impresos en 3D de forma eficiente y sin esfuerzo, incluye tanques duales para mayor capacidad.',
           image: '/brands/anycubic/estacion-limpieza.png'
         },
@@ -79,10 +90,26 @@ const BrandPage = () => {
       image: '/brands/prizma/hero.png',
       logo: '/brands/prizma-logo.png',
       products: [
+
         { 
-          name: 'Resina Prizma 3D Bio Splint', 
-          description: 'Resina fotopolimerizable Prizma 3D Bio Splint de Makertech Labs, diseñada para la impresión 3D de férulas y placas dentales. Ofrece alta biocompatibilidad, transparencia y resistencia, ideal para aplicaciones odontológicas que requieren precisión y seguridad.',
-          image: '/brands/prizma/resina-bio-splint.png'
+          name: 'Crown Diamond', 
+          description: 'Resina premium para coronas dentales, ofrece máxima resistencia y acabado estético natural.',
+          image: '/brands/prizma/productodiamond.jpeg'
+        },
+        { 
+          name: 'Bio Crown', 
+          description: 'Resina biocompatible ideal para coronas y puentes, garantiza durabilidad y seguridad.',
+          image: '/brands/prizma/denture.jpeg'
+        },
+        { 
+          name: 'Bio Splint', 
+          description: 'Material especializado para férulas y retenedores, proporciona estabilidad y confort al paciente.',
+          image: '/brands/prizma/producto1.png'
+        },
+        { 
+          name: 'Bio Denture', 
+          description: 'Resina para prótesis removibles, fácil de adaptar y altamente resistente al desgaste.',
+          image: '/brands/prizma/productodenture.jpeg'
         }
       ]
     },
@@ -94,63 +121,64 @@ const BrandPage = () => {
       logo: '/brands/panda-logo.jpeg',
       products: [
         { 
-          name: 'Escáner Intraoral Multicolor', 
+          name: 'PANDA SMART', 
           description: 'Escáner intraoral disponible en siete colores modernos: Crystal White, Lightsaber Red, Champagne Gold, Radiant Silver, Sparkly Purple, Ice Blue y Laguna Blue. Permite capturar impresiones digitales de manera rápida, precisa y con estilo, adaptándose al gusto de cada profesional dental.',
           image: '/brands/panda/escaner-multicolor.png'
         },
         { 
-          name: 'Escáner Intraoral Compacto', 
+          name: 'PANDA P4 Inalambrico', 
           description: 'Escáner intraoral compacto y ergonómico en color blanco, diseñado para facilitar la captura de impresiones digitales en consultorios modernos. Su interfaz intuitiva y diseño liviano permiten un flujo de trabajo eficiente y cómodo para el odontólogo.',
           image: '/brands/panda/escaner-compacto.png'
+        },
+        { 
+          name: 'scanner panda P3', 
+          description: 'Escáner intraoral digital de alta precisión, rápido, fácil de usar y el más vendido en su categoría.',
+          image: '/brands/panda/pandap3.jpeg'
         }
       ]
     },
     'SAEVO BY GNATUS': {
       name: 'SAEVO BY GNATUS',
       slogan: 'Innovación y Precisión en Equipamiento Dental',
-      description: 'La S500 F es la unidad odontológica más avanzada de SAEVO, diseñada para ofrecer precisión, comodidad y eficiencia tanto para el odontólogo como para el paciente. Integra tecnología digital, materiales de alta calidad y múltiples opciones de personalización para clínicas de alto nivel.',
+      description: 'SAEVO es una marca líder en tecnología odontológica, reconocida por su innovación, calidad y compromiso con la excelencia clínica. Su amplia gama de equipos y soluciones está diseñada para optimizar el trabajo del profesional dental, garantizando comodidad, precisión y seguridad tanto para el odontólogo como para el paciente.',
       image: '/brands/saevo/hero.jpeg',
       logo: '/brands/saevo-logo.png',
       products: [
         { 
-          name: 'Autoclave SAEVO', 
-          description: 'Esterilizador automático de alta capacidad y máxima seguridad, ideal para clínicas que buscan procesos confiables y sencillos.',
-          image: '/brands/saevo/autoclave.jpeg'
-        },
-        { 
-          name: 'Bomba de Vacío SAEVO', 
+          name: 'Bomba de succión 1HP SAEVO by GNATUS', 
           description: 'Solución potente y silenciosa para succión dental, optimizando la higiene y el confort del paciente en cada procedimiento.',
           image: '/brands/saevo/bomba-vacio.jpeg'
         },
+
         { 
-          name: 'S200 F – Unidad Compacta', 
-          description: 'Unidad compacta de alto rendimiento, pensada para espacios reducidos sin sacrificar tecnología ni comodidad.',
-          image: '/brands/saevo/s200f.jpeg'
-        },
-        { 
-          name: 'S400 Q – Unidad Multifuncional', 
-          description: 'Versatilidad y diseño moderno en una unidad que se adapta a las distintas necesidades de la práctica odontológica diaria.',
-          image: '/brands/saevo/s400q.jpeg'
-        },
-        { 
-          name: 'S200 F – Unidad Compacta (Modelo Adicional)', 
-          description: 'Unidad compacta de alto rendimiento, pensada para espacios reducidos sin sacrificar tecnología ni comodidad.',
-          image: '/brands/saevo/s200f-compacta.jpeg'
-        },
-        { 
-          name: 'Autoclave SAEVO (Apertura total)', 
+          name: 'AUTOCLAVE SAEVO 12 LITROS', 
           description: 'Autoclave de alta eficiencia para la esterilización rápida y segura de instrumentos odontológicos. Ideal para clínicas modernas que requieren máxima higiene en poco tiempo.',
           image: '/brands/saevo/autoclave-abierto.jpeg'
         },
         { 
-          name: 'Autoclave SAEVO (Vista frontal cerrada)', 
+          name: 'AUTO CLAVE SAEVO by GNATUS 21 litros', 
           description: 'Vista frontal del autoclave completamente cerrado, mostrando el diseño seguro y el panel de control intuitivo para ciclos automáticos de esterilización.',
           image: '/brands/saevo/autoclave-cerrado.jpeg'
         },
         { 
-          name: 'Silla Odontológica SAEVO (Modelo adicional)', 
+          name: 'Silla Odontologica S404F', 
           description: 'Silla odontológica ergonómica de última generación, fabricada para máxima comodidad del paciente y facilidad de operación para el especialista.',
           image: '/brands/saevo/silla-odontologica.jpeg'
+        },
+        { 
+          name: 'Silla odontologica S301F', 
+          description: 'Silla odontológica de diseño moderno y funcionalidad avanzada, ideal para consultorios que buscan comodidad y eficiencia en cada procedimiento.',
+          image: '/brands/saevo/s301f.jpeg'
+        },
+        { 
+          name: 'Silla Odontologica 501F', 
+          description: 'Silla odontológica de diseño avanzado y funcionalidad superior, ideal para consultorios que buscan máxima comodidad del paciente y eficiencia operativa.',
+          image: '/brands/saevo/producto4.jpeg'
+        },
+        { 
+          name: 'Silla Odontologica S401F', 
+          description: 'Silla odontológica compacta con tecnología moderna, perfecta para espacios reducidos sin comprometer la calidad y comodidad del tratamiento.',
+          image: '/brands/saevo/producto3.jpeg'
         }
       ]
     },
@@ -176,9 +204,14 @@ const BrandPage = () => {
       logo: '/brands/deoca-logo.png',
       products: [
         { 
-          name: 'DEOCA QL2028I – Unidad Dental Compacta', 
-          description: 'La QL2028I es la opción ideal para consultorios que requieren soluciones compactas sin sacrificar tecnología ni diseño. Incluye todas las funciones esenciales, con controles intuitivos y una estructura que optimiza el espacio, perfecta para clínicas modernas y eficientes.',
+          name: 'deoca ónix', 
+          description: 'La ónix es la opción ideal para consultorios que requieren soluciones compactas sin sacrificar tecnología ni diseño. Incluye todas las funciones esenciales, con controles intuitivos y una estructura que optimiza el espacio, perfecta para clínicas modernas y eficientes.',
           image: '/brands/deoca/hero.png'
+        },
+        { 
+          name: 'deoca dino', 
+          description: 'Unidad dental innovadora con diseño ergonómico y tecnología avanzada, ideal para consultorios modernos que buscan eficiencia y comodidad tanto para el profesional como para el paciente.',
+          image: '/brands/deoca/deoca-dino.jpeg'
         }
       ]
     },
@@ -229,7 +262,7 @@ const BrandPage = () => {
           image: '/brands/bioart/biocamara.png'
         },
         { 
-          name: 'Arco Facial y Articulador Bio-Art', 
+          name: 'Articulador Bioart A7 plus standard', 
           description: 'Kit de articulador y arco facial para laboratorio dental, ideal para el montaje preciso de modelos y la reproducción exacta de movimientos mandibulares, optimizando la confección de prótesis y rehabilitaciones.',
           image: '/brands/bioart/arco-facial.png'
         }
@@ -243,7 +276,7 @@ const BrandPage = () => {
       logo: '/brands/orthometric-logo.png',
       products: [
         { 
-          name: 'Elástico Ortodóntico Corrente', 
+          name: 'Cadeneta', 
           description: 'Cadena elástica para ortodoncia, ideal para cierre de espacios y alineación dental precisa. Flexible y resistente.',
           image: '/brands/orthometric/producto1.png'
         },
@@ -256,6 +289,11 @@ const BrandPage = () => {
           name: 'Arco Intraoral FlexyNiTi', 
           description: 'Arco superelástico de níquel-titanio, perfecto para movimientos suaves y continuos durante el tratamiento de ortodoncia.',
           image: '/brands/orthometric/producto3.png'
+        },
+        { 
+          name: 'Bracket Roth 022 Orthometric', 
+          description: 'Sistema de brackets de alta calidad diseñado para ofrecer un control preciso del movimiento dental, asegurando resultados efectivos y comodidad durante el tratamiento de ortodoncia. Ideal para profesionales que buscan fiabilidad y eficiencia en cada caso clínico.',
+          image: '/brands/orthometric/producto4.jpeg'
         }
       ]
     },
@@ -317,7 +355,7 @@ const BrandPage = () => {
       slogan: 'Tecnología Avanzada en Diagnóstico y Esterilización',
       description: 'WOSON se especializa en el desarrollo de equipos de diagnóstico por imagen y esterilización de alta tecnología para clínicas dentales. Nuestros productos combinan precisión, seguridad y eficiencia, ofreciendo soluciones completas para radiografía digital y esterilización de instrumentos con los más altos estándares de calidad.',
       image: '/brands/woson/hero.png',
-      logo: '/brands/woson-logo.PNG',
+      logo: '/brands/woson-logo.png',
       products: [
         { 
           name: 'Sensor Intraoral de Rayos X Woson Rayin', 
@@ -336,15 +374,15 @@ const BrandPage = () => {
       slogan: 'Equipamiento Dental de Precisión y Eficiencia',
       description: 'DTE se especializa en el desarrollo de equipos dentales de alta precisión que combinan tecnología avanzada con diseño ergonómico. Nuestros productos incluyen scalers ultrasónicos y lámparas de fotocurado de última generación, diseñados para optimizar los procedimientos clínicos y mejorar la experiencia tanto del profesional como del paciente.',
       image: '/brands/dte/hero.jpeg',
-      logo: '/brands/dte-logo.PNG',
+      logo: '/brands/dte-logo.png',
       products: [
         { 
-          name: 'Scaler ultrasónico DTE D5 LED', 
+          name: 'Ultrasonido', 
           description: 'Equipo ultrasónico para profilaxis dental con control digital, potente y preciso. Incluye pieza de mano con luz LED para mayor visibilidad durante el tratamiento.',
           image: '/brands/dte/scaler-d5-led.png'
         },
         { 
-          name: 'Lámpara de Fotocurado', 
+          name: 'lámpara fotocurado O-LIGTH', 
           description: 'Lámpara LED para el fotocurado de resinas dentales. Diseño moderno, ergonómico y con alta intensidad de luz para un curado rápido y eficiente.',
           image: '/brands/dte/lampara-fotocurado.jpeg'
         },
@@ -368,7 +406,7 @@ const BrandPage = () => {
           image: '/brands/jinme/j5-led-handpiece.png'
         },
         { 
-          name: 'J45 45° Degree Surgical Handpiece', 
+          name: 'J45 LED', 
           description: 'Pieza de mano quirúrgica a 45° especialmente diseñada para cirugías dentales complejas. Su ángulo facilita el acceso en zonas de difícil alcance, brindando precisión y seguridad al profesional.',
           image: '/brands/jinme/j45-surgical-handpiece.png'
         },
@@ -401,7 +439,7 @@ const BrandPage = () => {
       logo: '/brands/tpc-logo.png',
       products: [
         { 
-          name: 'TPC 25kHz "Universal" Insert S1025', 
+          name: 'TPC 25kHz "Universal"', 
           description: 'Punta ultrasónica universal de 25 kHz con mango metálico, ideal para procedimientos de limpieza dental profesional. Compatible con la mayoría de los equipos ultrasónicos, ofrece eficiencia en la remoción de placa y cálculo dental. Fabricada en EE. UU.',
           image: '/brands/tpc/tpc-s1025-insert.png'
         }
@@ -439,6 +477,22 @@ const BrandPage = () => {
           image: '/brands/aalbadent/vera-pdn.png'
         }
       ]
+    },
+    'MDT': {
+      name: 'MDT',
+      slogan: 'Excelencia en Equipamiento Dental',
+      description: 'MDT se especializa en equipamiento dental de alta calidad. Para conocer nuestro catálogo completo de productos, consulta nuestro drive.',
+      image: '/brands/mdt-logo.jpeg',
+      logo: '/brands/mdt-logo.jpeg',
+      products: []
+    },
+    'PREVEST': {
+      name: 'PREVEST',
+      slogan: 'Innovación en Materiales Dentales',
+      description: 'PREVEST ofrece materiales dentales innovadores y de alta calidad. Para conocer nuestro catálogo completo de productos, consulta nuestro drive.',
+      image: '/brands/prevest-logo.jpeg',
+      logo: '/brands/prevest-logo.jpeg',
+      products: []
     }
   };
 
@@ -479,13 +533,15 @@ const BrandPage = () => {
       'ANYCUBIC': '/brands/anycubic-logo.jpeg',
       'PRIZMA': '/brands/prizma-logo.png',
       'PANDA': '/brands/panda-logo.jpeg',
-      'WOSON': '/brands/woson-logo.PNG',
-      'DTE': '/brands/dte-logo.PNG',
+      'WOSON': '/brands/woson-logo.png',
+      'DTE': '/brands/dte-logo.png',
       'JINME': '/brands/jinme-logo.png',
       'DENTALFILM': '/brands/dentafilm-logo.jpg',
       'TPC': '/brands/tpc-logo.png',
       'DMP': '/brands/dmp-logo.png',
-      'Aalbadent': '/brands/aalbadent-logo.png'
+      'AALBADENT': '/brands/aalbadent-logo.png',
+      'MDT': '/brands/mdt-logo.jpeg',
+      'PREVEST': '/brands/prevest-logo.jpeg'
     };
     return logoMap[brand] || '/brands/default-logo.png';
   };

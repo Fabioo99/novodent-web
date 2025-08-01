@@ -65,7 +65,7 @@ const Footer = () => {
                 variant="outline"
                 size="sm"
                 onClick={handleInstagram}
-                className="flex items-center gap-2 border-background/20 text-background hover:bg-background hover:text-foreground"
+                className="flex items-center gap-2 border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white bg-white/10 backdrop-blur-sm"
               >
                 <Instagram className="h-4 w-4" />
                 Instagram
@@ -111,15 +111,7 @@ const Footer = () => {
                   Contacto
                 </button>
               </li>
-              <li>
-                <button 
-                  onClick={handleCatalog}
-                  className="text-background/80 hover:text-primary transition-colors flex items-center gap-2"
-                >
-                  <FileText className="h-4 w-4" />
-                  Catálogo Completo
-                </button>
-              </li>
+
             </ul>
           </div>
 
@@ -173,8 +165,8 @@ const Footer = () => {
                 <span className="font-semibold text-background">Horario de Atención</span>
               </div>
               <div className="text-sm text-background/80">
-                <div>Lun - Vie: 8:00 AM - 6:00 PM</div>
-                <div>Sáb: 8:00 AM - 2:00 PM</div>
+                <div>Lunes a Viernes De 8:00 a.m. a 4:00 p.m.</div>
+                <div>Sabado y Domingo no laboramos</div>
               </div>
             </div>
           </div>

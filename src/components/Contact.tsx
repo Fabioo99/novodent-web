@@ -54,7 +54,7 @@ const Contact = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Ponte en <span className="text-primary">Contacto</span>
+            Entra en <span className="text-primary">Contacto</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Estamos aquí para ayudarte a encontrar las mejores soluciones odontológicas para tu práctica
@@ -104,13 +104,13 @@ const Contact = () => {
                 </div>
 
                 {/* Instagram */}
-                <div className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:shadow-card transition-all duration-300 cursor-pointer" onClick={handleInstagram}>
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                    <Instagram className="h-6 w-6 text-white" />
+                <div className="flex items-center gap-4 p-4 rounded-xl border hover:shadow-lg transition-all duration-300 cursor-pointer" style={{backgroundColor: '#FFFFFF', borderColor: '#FFFFFF'}} onClick={handleInstagram}>
+                  <div className="w-12 h-12 bg-primary/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                    <Instagram className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground">Instagram</div>
-                    <div className="text-muted-foreground">@novodentca</div>
+                    <div className="font-semibold text-primary">Instagram</div>
+                    <div className="text-primary/80 text-sm">@novodent</div>
                   </div>
                 </div>
 
@@ -121,8 +121,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">Horario de Atención</div>
-                    <div className="text-muted-foreground">Lun - Vie: 8:00 AM - 6:00 PM</div>
-                    <div className="text-muted-foreground">Sáb: 8:00 AM - 2:00 PM</div>
+                    <div className="text-muted-foreground">Lunes a Viernes De 8:00 a.m. a 4:00 p.m.</div>
+                    <div className="text-muted-foreground">Sabado y Domingo no laboramos</div>
                   </div>
                 </div>
               </div>

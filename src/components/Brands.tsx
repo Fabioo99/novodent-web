@@ -57,7 +57,7 @@ const Brands = () => {
   };
 
   const handleBrandCatalog = (brand: string) => {
-    window.open('https://drive.google.com/drive/folders/1HqjJS3cbcbofBF-vUHzr7htd1kvqFWzH?usp=drive_link', '_blank');
+    window.open('https://drive.google.com/drive/folders/1rmiHiEIzd_E7S9rUtD8seuzgM8LGawUz?usp=sharing', '_blank');
   };
 
   const handleBrandClick = (brand: string) => {
@@ -124,9 +124,10 @@ const Brands = () => {
     {
       name: 'SAEVO BY GNATUS',
       products: [
-        { name: 'Saevo Smart', description: 'Unidad dental inteligente con tecnología avanzada' },
-        { name: 'Compressor', description: 'Compresor dental silencioso y eficiente' },
-        { name: 'Autoclave', description: 'Sistema de esterilización automático' }
+        { name: 'S501F', description: 'Versatilidad y diseño moderno en una unidad que se adapta a las distintas necesidades de la práctica odontológica diaria' },
+        { name: 'S401F', description: 'Unidad compacta de alto rendimiento, pensada para espacios reducidos sin sacrificar tecnología ni comodidad' },
+        { name: 'autoclave SAEVO 12 litros', description: 'Autoclave de alta eficiencia para la esterilización rápida y segura de instrumentos odontológicos' },
+        { name: 'Bomba de succión 1HP SAEVO by GNATUS', description: 'Solución potente y silenciosa para succión dental, optimizando la higiene y el confort del paciente' }
       ]
     },
     {
@@ -140,7 +141,7 @@ const Brands = () => {
   const allBrands = [
     'SAEVO BY GNATUS', 'AJAX', 'DEOCA', 'SPD', 'BIOART', 'ORTHOMETRIC',
     'VOCO', 'SHOFU', 'ANYCUBIC', 'PRIZMA', 'PANDA', 'WOSON',
-    'DTE', 'JINME', 'DENTALFILM', 'PREVEST', 'MDT', 'TPC', 'DMP', 'Aalbadent'
+    'DTE', 'JINME', 'DENTALFILM', 'PREVEST', 'MDT', 'TPC', 'DMP', 'AALBADENT'
   ];
 
   // Brand logos mapping
@@ -159,10 +160,12 @@ const Brands = () => {
     'ORTHOMETRIC': '/brands/orthometric-logo.png',
     'VOCO': '/brands/voco-logo.png',
     'DMP': '/brands/dmp-logo.png',
-    'Aalbadent': '/brands/aalbadent-logo.png',
+    'AALBADENT': '/brands/aalbadent-logo.png',
     'WOSON': '/brands/woson-logo.png',
     'JINME': '/brands/jinme-logo.png',
     'TPC': '/brands/tpc-logo.png',
+    'MDT': '/brands/mdt-logo.jpeg',
+    'PREVEST': '/brands/prevest-logo.jpeg',
     // All brand logos are now available!
   };
 
