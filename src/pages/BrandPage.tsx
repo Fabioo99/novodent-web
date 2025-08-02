@@ -382,7 +382,7 @@ const BrandPage = () => {
           image: '/brands/dte/scaler-d5-led.png'
         },
         { 
-          name: 'lámpara fotocurado O-LIGTH', 
+          name: 'Lámpara fotocurado O-LIGTH', 
           description: 'Lámpara LED para el fotocurado de resinas dentales. Diseño moderno, ergonómico y con alta intensidad de luz para un curado rápido y eficiente.',
           image: '/brands/dte/lampara-fotocurado.jpeg'
         },
