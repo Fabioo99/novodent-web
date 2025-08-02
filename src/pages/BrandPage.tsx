@@ -131,7 +131,7 @@ const BrandPage = () => {
           image: '/brands/panda/escaner-compacto.png'
         },
         { 
-          name: 'scanner panda P3', 
+          name: 'Scanner panda P3', 
           description: 'Escáner intraoral digital de alta precisión, rápido, fácil de usar y el más vendido en su categoría.',
           image: '/brands/panda/pandap3.jpeg'
         }
@@ -151,7 +151,7 @@ const BrandPage = () => {
         },
 
         { 
-          name: 'AUTOCLAVE SAEVO 12 LITROS', 
+          name: 'AUTOCLAVE SAEVO by GNATUS 12 litros', 
           description: 'Autoclave de alta eficiencia para la esterilización rápida y segura de instrumentos odontológicos. Ideal para clínicas modernas que requieren máxima higiene en poco tiempo.',
           image: '/brands/saevo/autoclave-abierto.jpeg'
         },
@@ -190,7 +190,7 @@ const BrandPage = () => {
       logo: '/brands/ajax-logo.png',
       products: [
         { 
-          name: 'Equipo Dental AJAX Principal', 
+          name: 'Silla Odontologica Ajax 10+ NOVO', 
           description: 'Solución integral de equipamiento dental que combina tecnología avanzada, diseño ergonómico y máxima confiabilidad para el consultorio moderno.',
           image: '/brands/ajax/hero.jpeg'
         }
@@ -204,12 +204,12 @@ const BrandPage = () => {
       logo: '/brands/deoca-logo.png',
       products: [
         { 
-          name: 'deoca ónix', 
+          name: 'Deoca Onix', 
           description: 'La ónix es la opción ideal para consultorios que requieren soluciones compactas sin sacrificar tecnología ni diseño. Incluye todas las funciones esenciales, con controles intuitivos y una estructura que optimiza el espacio, perfecta para clínicas modernas y eficientes.',
           image: '/brands/deoca/hero.png'
         },
         { 
-          name: 'deoca dino', 
+          name: 'Deoca Dino', 
           description: 'Unidad dental innovadora con diseño ergonómico y tecnología avanzada, ideal para consultorios modernos que buscan eficiencia y comodidad tanto para el profesional como para el paciente.',
           image: '/brands/deoca/deoca-dino.jpeg'
         }
@@ -233,12 +233,12 @@ const BrandPage = () => {
           image: '/brands/spd/destiladora.png'
         },
         { 
-          name: 'Compresor Dental SPD (Modelo 3)', 
+          name: 'Compresor dental 2HP 40L', 
           description: 'Compresor de alto rendimiento, diseñado para clínicas con múltiples unidades.',
           image: '/brands/spd/compresor3.png'
         },
         { 
-          name: 'Compresor Dental SPD (Modelo 4)', 
+          name: 'Compresor dental 2HP 70Litros', 
           description: 'Compresor vertical de gran capacidad, máxima potencia y eficiencia para grandes demandas.',
           image: '/brands/spd/compresor4.png'
         }
@@ -377,7 +377,7 @@ const BrandPage = () => {
       logo: '/brands/dte-logo.png',
       products: [
         { 
-          name: 'Ultrasonido', 
+          name: 'Ultrasonido D5 LED DTE', 
           description: 'Equipo ultrasónico para profilaxis dental con control digital, potente y preciso. Incluye pieza de mano con luz LED para mayor visibilidad durante el tratamiento.',
           image: '/brands/dte/scaler-d5-led.png'
         },

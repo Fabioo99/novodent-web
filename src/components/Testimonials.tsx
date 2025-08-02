@@ -3,26 +3,26 @@ import { Star, Quote } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'Dr. María González',
-      position: 'Odontóloga General',
-      location: 'Valencia, Carabobo',
-      content: 'Novodent ha sido nuestro proveedor de confianza por más de 10 años. La calidad de sus equipos y su atención post-venta es excepcional. Recomiendo especialmente sus impresoras 3D ANYCUBIC.',
+      name: 'Belkis Dommar',
+      position: 'Decano facultad odontologia',
+      location: 'Universidad de Carabobo',
+      content: 'Modernizamos una nueva sala clínica para postgrado con equipos SAEVO by Gnatus para la unidad de Carabobo. La calidad de esta marca es reconocida mundialmente y optamos por ella para nuestra nueva sala clínica en nuestra facultad',
       rating: 5,
       image: '/api/placeholder/80/80' // Will be replaced with actual image
     },
     {
-      name: 'Dr. Carlos Mendoza',
-      position: 'Especialista en Endodoncia',
-      location: 'Caracas, Miranda',
-      content: 'Los motores de endodoncia JINME que adquirí superaron mis expectativas. La precisión y durabilidad son extraordinarias. El soporte técnico de Novodent es inmediato y muy profesional.',
+      name: 'José Luis Almea',
+      position: 'Odontólogo',
+      location: 'Caracas',
+      content: 'Las piezas de mano JINME que adquirí superaron mis expectativas. Al ser equipos chinos tienes duda de su calidad pero la precisión y durabilidad me dejó sin palabras. La garantía y atención de Novodent es muy profesional',
       rating: 5,
       image: '/api/placeholder/80/80'
     },
     {
-      name: 'Dra. Ana Rodríguez',
-      position: 'Directora Clínica Dental',
-      location: 'Maracaibo, Zulia',
-      content: 'Modernizamos toda nuestra clínica con equipos SAEVO y DTE. La diferencia en eficiencia y calidad de atención a nuestros pacientes ha sido notable. Excelente inversión.',
+      name: 'Nelmary Vidarte',
+      position: 'Odontóloga',
+      location: 'Valencia, Carabobo',
+      content: 'Novodent ha sido mi aliado para equipar mi consultorio de 0. La calidad de sus equipos y su atención post venta es excepcional. Recomienda especialmente sus equipos digitales para impresión 3D y scanner panda 3D',
       rating: 5,
       image: '/api/placeholder/80/80'
     }

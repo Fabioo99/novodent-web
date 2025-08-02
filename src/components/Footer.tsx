@@ -177,7 +177,7 @@ const Footer = () => {
               Marcas Representadas
             </h3>
             <div className="grid grid-cols-2 gap-2 text-sm">
-              {brands.slice(0, 12).map((brand) => (
+              {brands.map((brand) => (
                 <div key={brand} className="text-background/80 hover:text-primary transition-colors cursor-pointer">
                   {brand}
                 </div>
