@@ -4,6 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/', // Importante para deploy en dominio raíz
   server: {
     host: "::",
     port: 8080,
