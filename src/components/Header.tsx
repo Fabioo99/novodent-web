@@ -7,6 +7,7 @@ const Header = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBrandsOpen, setIsBrandsOpen] = useState(false);
+  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const brands = [
     'SAEVO BY GNATUS', 'AJAX', 'DEOCA', 'SPD', 'BIOART', 'ORTHOMETRIC',
@@ -47,11 +48,24 @@ const Header = () => {
             </a>
             
             {/* Brands Dropdown */}
-            <div className="relative group">
+            <div 
+              className="relative group"
+              onMouseEnter={() => {
+                if (closeTimeout) {
+                  clearTimeout(closeTimeout);
+                  setCloseTimeout(null);
+                }
+                setIsBrandsOpen(true);
+              }}
+              onMouseLeave={() => {
+                const timeout = setTimeout(() => {
+                  setIsBrandsOpen(false);
+                }, 300);
+                setCloseTimeout(timeout);
+              }}
+            >
               <button 
                 className="flex items-center text-foreground hover:text-primary transition-colors"
-                onMouseEnter={() => setIsBrandsOpen(true)}
-                onMouseLeave={() => setIsBrandsOpen(false)}
               >
                 Marcas
                 <ChevronDown className="ml-1 h-4 w-4" />
@@ -60,8 +74,6 @@ const Header = () => {
               {isBrandsOpen && (
                 <div 
                   className="absolute top-full left-0 mt-2 w-80 bg-card shadow-elegant rounded-lg border border-border"
-                  onMouseEnter={() => setIsBrandsOpen(true)}
-                  onMouseLeave={() => setIsBrandsOpen(false)}
                 >
                   <div className="max-h-64 overflow-y-auto p-4">
                     <div className="space-y-1">

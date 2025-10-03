@@ -5,6 +5,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { MessageCircle, FileText, ArrowLeft, ChevronRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { getCatalogUrl } from '@/config/catalogs';
 
 interface Product {
   name: string;
@@ -33,7 +34,9 @@ const BrandPage = () => {
   };
 
   const handleBrandCatalog = () => {
-    window.open('https://drive.google.com/drive/folders/1rmiHiEIzd_E7S9rUtD8seuzgM8LGawUz?usp=sharing', '_blank');
+    if (brandName) {
+      window.open(getCatalogUrl(brandName), '_blank');
+    }
   };
 
   // Redirect MDT and PREVEST to catalog automatically

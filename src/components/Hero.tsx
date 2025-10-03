@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { MessageCircle, FileText, ArrowRight } from 'lucide-react';
-import heroImage from '@/assets/hero-dental-clinic.jpg';
+import heroImage from '@/assets/hero-dental-clinic-new.jpg';
 
 const Hero = () => {
   const handleWhatsApp = () => {
@@ -39,7 +39,7 @@ const Hero = () => {
 
               <div className="flex items-center space-x-2 text-lg">
                 <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
-                <span className="font-semibold">45+ años de experiencia</span>
+                <span className="font-semibold">+45 años de experiencia</span>
               </div>
             </div>
 

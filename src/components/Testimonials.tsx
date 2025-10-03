@@ -4,9 +4,9 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: 'Belkis Dommar',
-      position: 'Decano facultad odontologia',
+      position: 'Decano de la facultad de odontologia',
       location: 'Universidad de Carabobo',
-      content: 'Modernizamos una nueva sala clínica para postgrado con equipos SAEVO by Gnatus para la unidad de Carabobo. La calidad de esta marca es reconocida mundialmente y optamos por ella para nuestra nueva sala clínica en nuestra facultad',
+      content: 'Modernizamos una nueva sala clínica para postgrado con equipos SAEVO by Gnatus para la universidad de Carabobo. La calidad de esta marca es reconocida mundialmente y optamos por ella para nuestra nueva sala clínica en nuestra facultad',
       rating: 5,
       image: '/api/placeholder/80/80' // Will be replaced with actual image
     },
@@ -14,7 +14,7 @@ const Testimonials = () => {
       name: 'José Luis Almea',
       position: 'Odontólogo',
       location: 'Caracas',
-      content: 'Las piezas de mano JINME que adquirí superaron mis expectativas. Al ser equipos chinos tienes duda de su calidad pero la precisión y durabilidad me dejó sin palabras. La garantía y atención de Novodent es muy profesional',
+      content: 'Las piezas de mano JINME que adquirí superaron mis expectativas. Al ser equipos chinos tienes dudas de su calidad pero la precisión y durabilidad me dejó sin palabras. La garantía y atención de Novodent es muy profesional',
       rating: 5,
       image: '/api/placeholder/80/80'
     },
@@ -22,7 +22,7 @@ const Testimonials = () => {
       name: 'Nelmary Vidarte',
       position: 'Odontóloga',
       location: 'Valencia, Carabobo',
-      content: 'Novodent ha sido mi aliado para equipar mi consultorio de 0. La calidad de sus equipos y su atención post venta es excepcional. Recomienda especialmente sus equipos digitales para impresión 3D y scanner panda 3D',
+      content: 'Novodent ha sido mi aliado para equipar mi consultorio desde cero. La calidad de sus equipos y su atención post venta es excepcional. Recomiendo especialmente sus equipos digitales para impresión 3D y scanner panda 3D',
       rating: 5,
       image: '/api/placeholder/80/80'
     }
@@ -100,7 +100,7 @@ const Testimonials = () => {
             
             <div className="grid md:grid-cols-3 gap-8 mb-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">500+</div>
+                <div className="text-4xl font-bold text-primary mb-2">+500</div>
                 <div className="text-muted-foreground">Clínicas Equipadas</div>
               </div>
               <div className="text-center">

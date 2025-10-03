@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { MessageCircle } from 'lucide-react';
+import { getCatalogUrl } from '@/config/catalogs';
 
 interface Product {
   name: string;
@@ -57,7 +58,7 @@ const Brands = () => {
   };
 
   const handleBrandCatalog = (brand: string) => {
-    window.open('https://drive.google.com/drive/folders/1rmiHiEIzd_E7S9rUtD8seuzgM8LGawUz?usp=sharing', '_blank');
+    window.open(getCatalogUrl(brand), '_blank');
   };
 
   const handleBrandClick = (brand: string) => {

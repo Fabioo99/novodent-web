@@ -1,5 +1,5 @@
 import { Lightbulb, Shield, Package, Target } from 'lucide-react';
-import professionalImage from '@/assets/dentist-professional.jpg';
+import professionalImage from '@/assets/dentist-professional-new.jpg';
 
 const WhyChoose = () => {
   const features = [
@@ -11,7 +11,7 @@ const WhyChoose = () => {
     {
       icon: Shield,
       title: 'Confianza',
-      description: '45+ años de experiencia respaldando a profesionales de la salud dental en todo Venezuela.'
+      description: 'Más de 45 años de experiencia respaldando a profesionales de la salud dental en todo Venezuela.'
     },
     {
       icon: Package,
@@ -70,15 +70,15 @@ const WhyChoose = () => {
             <div className="mt-12 p-8 bg-card rounded-2xl shadow-card border border-border">
               <div className="grid grid-cols-2 gap-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">45+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">+45</div>
                   <div className="text-muted-foreground">Años de Experiencia</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">20+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">+20</div>
                   <div className="text-muted-foreground">Marcas Internacionales</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">1000+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">+1000</div>
                   <div className="text-muted-foreground">Productos Disponibles</div>
                 </div>
                 <div className="text-center">
