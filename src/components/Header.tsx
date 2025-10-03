@@ -43,9 +43,12 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#inicio" className="text-foreground hover:text-primary transition-colors">
+            <button
+              onClick={() => navigate('/')}
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Inicio
-            </a>
+            </button>
 
             {/* Brands Dropdown */}
             <div
@@ -138,9 +141,15 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-4">
-              <a href="#inicio" className="text-foreground hover:text-primary transition-colors">
+              <button
+                onClick={() => {
+                  navigate('/');
+                  setIsMenuOpen(false);
+                }}
+                className="text-foreground hover:text-primary transition-colors text-left"
+              >
                 Inicio
-              </a>
+              </button>
               <a href="#marcas" className="text-foreground hover:text-primary transition-colors">
                 Marcas
               </a>
