@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página principal -->
+  <url>
+    <loc>https://novodent-web.vercel.app/</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Páginas de marcas -->
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/SAEVO%20BY%20GNATUS</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/AJAX</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/DEOCA</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/SPD</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/BIOART</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/ORTHOMETRIC</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/VOCO</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/SHOFU</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/ANYCUBIC</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/PRIZMA</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/PANDA</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/WOSON</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/DTE</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/JINME</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/DENTALFILM</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/PREVEST</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/MDT</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/TPC</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/DMP</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://novodent-web.vercel.app/marca/AALBADENT</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
