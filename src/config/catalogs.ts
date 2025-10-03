@@ -10,6 +10,7 @@ export const brandCatalogs: Record<string, string> = {
   'PRIZMA': '/catalogos/PRIZMA.pdf',
   'VOCO': '/catalogos/VOCO.pdf',
   'SPD': '/catalogos/SPD.pdf',
+  'SHOFU': '/catalogos/SHOFU.pdf',
 };
 
 // Default catalog URL for brands without specific catalogs
