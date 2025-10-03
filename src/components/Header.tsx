@@ -29,13 +29,13 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <button 
+            <button
               onClick={() => navigate('/')}
               className="flex items-center hover:opacity-80 transition-opacity"
             >
-              <img 
-                src="/logo-novodent.png" 
-                alt="Novodent Logo" 
+              <img
+                src="/logo-novodent.png"
+                alt="Novodent Logo"
                 className="h-10 w-auto"
               />
             </button>
@@ -46,9 +46,9 @@ const Header = () => {
             <a href="#inicio" className="text-foreground hover:text-primary transition-colors">
               Inicio
             </a>
-            
+
             {/* Brands Dropdown */}
-            <div 
+            <div
               className="relative group"
               onMouseEnter={() => {
                 if (closeTimeout) {
@@ -64,15 +64,15 @@ const Header = () => {
                 setCloseTimeout(timeout);
               }}
             >
-              <button 
+              <button
                 className="flex items-center text-foreground hover:text-primary transition-colors"
               >
                 Marcas
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              
+
               {isBrandsOpen && (
-                <div 
+                <div
                   className="absolute top-full left-0 mt-2 w-80 bg-card shadow-elegant rounded-lg border border-border"
                 >
                   <div className="max-h-64 overflow-y-auto p-4">
@@ -150,7 +150,7 @@ const Header = () => {
               <a href="#contacto" className="text-foreground hover:text-primary transition-colors">
                 Contacto
               </a>
-              
+
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
                 <Button
                   variant="whatsapp"
