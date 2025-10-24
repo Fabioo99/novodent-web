@@ -39,17 +39,17 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <img 
-                src="/logo-novodent.png" 
-                alt="Novodent Logo" 
+              <img
+                src="/logo-novodent.png"
+                alt="Novodent Logo"
                 className="h-12 w-auto"
               />
             </div>
             <p className="text-background/80 leading-relaxed mb-6">
-              Tu aliado confiable en soluciones odontológicas con más de 45 años de experiencia. 
+              Tu aliado confiable en soluciones odontológicas con más de 45 años de experiencia.
               Importamos y distribuimos equipos de alta tecnología de las mejores marcas internacionales.
             </p>
-            
+
             <div className="flex gap-4">
               <Button
                 variant="whatsapp"
@@ -60,7 +60,7 @@ const Footer = () => {
                 <MessageCircle className="h-4 w-4" />
                 WhatsApp
               </Button>
-              
+
               <Button
                 variant="outline"
                 size="sm"
@@ -80,7 +80,7 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection('inicio')}
                   className="text-background/80 hover:text-primary transition-colors"
                 >
@@ -88,7 +88,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection('marcas')}
                   className="text-background/80 hover:text-primary transition-colors"
                 >
@@ -96,7 +96,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection('nosotros')}
                   className="text-background/80 hover:text-primary transition-colors"
                 >
@@ -104,7 +104,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection('contacto')}
                   className="text-background/80 hover:text-primary transition-colors"
                 >
@@ -123,34 +123,34 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary" />
-                <button 
+                <button
                   onClick={handlePhone}
                   className="text-background/80 hover:text-primary transition-colors"
                 >
                   +58 412 4555310
                 </button>
               </div>
-              
+
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary" />
-                <button 
+                <button
                   onClick={handleEmail}
                   className="text-background/80 hover:text-primary transition-colors"
                 >
                   novodent.vzla@gmail.com
                 </button>
               </div>
-              
+
               <div className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-primary" />
                 <span className="text-background/80">
                   Valencia, Edo. Carabobo
                 </span>
               </div>
-              
+
               <div className="flex items-center gap-3">
                 <Instagram className="h-5 w-5 text-primary" />
-                <button 
+                <button
                   onClick={handleInstagram}
                   className="text-background/80 hover:text-primary transition-colors"
                 >
@@ -165,7 +165,7 @@ const Footer = () => {
                 <span className="font-semibold text-background">Horario de Atención</span>
               </div>
               <div className="text-sm text-background/80">
-                <div>Lunes a Viernes De 8:00 a.m. a 4:00 p.m.</div>
+                <div>Lunes a Viernes De 8:00 a.m. a 5:00 p.m.</div>
                 <div>Sabado y Domingo no laboramos</div>
               </div>
             </div>
@@ -183,7 +183,7 @@ const Footer = () => {
                 </div>
               ))}
             </div>
-            <button 
+            <button
               onClick={() => scrollToSection('marcas')}
               className="text-primary hover:text-secondary transition-colors mt-4 text-sm"
             >
@@ -198,7 +198,7 @@ const Footer = () => {
             <div className="text-background/60 text-sm">
               © 2024 Novodent. Todos los derechos reservados. 45+ años distribuyendo excelencia odontológica.
             </div>
-            
+
             <div className="flex items-center gap-6">
               <Button
                 variant="whatsapp"
@@ -211,7 +211,7 @@ const Footer = () => {
               </Button>
             </div>
           </div>
-          
+
           <div className="text-center mt-6 text-background/40 text-xs">
             Distribuidores oficiales de tecnología odontológica de vanguardia en Venezuela
           </div>

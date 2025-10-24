@@ -121,7 +121,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">Horario de Atención</div>
-                    <div className="text-muted-foreground">Lunes a Viernes De 8:00 a.m. a 4:00 p.m.</div>
+                    <div className="text-muted-foreground">Lunes a Viernes De 8:00 a.m. a 5:00 p.m.</div>
                     <div className="text-muted-foreground">Sabado y Domingo no laboramos</div>
                   </div>
                 </div>
