@@ -1,7 +1,9 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "novodent-dental-showcase",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Sitio web profesional para Novodent - Distribuidor de equipos odontológicos en Venezuela",
+  "author": "Novodent C.A.",
   "type": "module",
   "scripts": {
     "dev": "vite",
