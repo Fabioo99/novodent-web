@@ -1,7 +1,11 @@
 import { MessageCircle, FileText, Phone, Mail, MapPin, Instagram, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleWhatsApp = () => {
     window.open('https://wa.me/584124555310', '_blank');
   };
@@ -23,7 +27,17 @@ const Footer = () => {
   };
 
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    // If we're not on the home page, navigate there first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      // Already on home page, just scroll
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const brands = [

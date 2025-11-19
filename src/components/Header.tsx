@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, FileText, Menu, X, ChevronDown } from 'lucide-react';
 
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBrandsOpen, setIsBrandsOpen] = useState(false);
   const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
@@ -21,6 +22,22 @@ const Header = () => {
 
   const handleCatalog = () => {
     window.open('https://drive.google.com/drive/folders/1rmiHiEIzd_E7S9rUtD8seuzgM8LGawUz?usp=sharing', '_blank');
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    setIsMenuOpen(false); // Close mobile menu if open
+    
+    // If we're not on the home page, navigate there first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      // Already on home page, just scroll
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -95,12 +112,18 @@ const Header = () => {
               )}
             </div>
 
-            <a href="#nosotros" className="text-foreground hover:text-primary transition-colors">
+            <button
+              onClick={() => scrollToSection('nosotros')}
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Sobre Nosotros
-            </a>
-            <a href="#contacto" className="text-foreground hover:text-primary transition-colors">
+            </button>
+            <button
+              onClick={() => scrollToSection('contacto')}
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Contacto
-            </a>
+            </button>
           </nav>
 
           {/* Action Buttons */}
@@ -150,15 +173,24 @@ const Header = () => {
               >
                 Inicio
               </button>
-              <a href="#marcas" className="text-foreground hover:text-primary transition-colors">
+              <button
+                onClick={() => scrollToSection('marcas')}
+                className="text-foreground hover:text-primary transition-colors text-left"
+              >
                 Marcas
-              </a>
-              <a href="#nosotros" className="text-foreground hover:text-primary transition-colors">
+              </button>
+              <button
+                onClick={() => scrollToSection('nosotros')}
+                className="text-foreground hover:text-primary transition-colors text-left"
+              >
                 Sobre Nosotros
-              </a>
-              <a href="#contacto" className="text-foreground hover:text-primary transition-colors">
+              </button>
+              <button
+                onClick={() => scrollToSection('contacto')}
+                className="text-foreground hover:text-primary transition-colors text-left"
+              >
                 Contacto
-              </a>
+              </button>
 
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
                 <Button
